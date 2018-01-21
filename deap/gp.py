@@ -664,7 +664,10 @@ def cxOnePoint(ind1, ind2):
 
         slice1 = ind1.searchSubtree(index1)
         slice2 = ind2.searchSubtree(index2)
-        ind1[slice1], ind2[slice2] = ind2[slice2], ind1[slice1]
+        ind1slice = ind1[slice1]
+        ind2slice = ind2[slice2]
+        ind1[slice1] = ind2slice
+        ind2slice = ind1slice
 
     return ind1, ind2
 
